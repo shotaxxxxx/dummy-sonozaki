@@ -145,7 +145,11 @@ Module(Common)
     color: $sub-color;
     position: relative;
     padding-left: 33px;
-    font-size: .625em;
+    font-size: .5em;
+
+    @include mq('sp') {
+      font-size: .625em;
+    }
 
     @include mq('tab') {
       font-size: .5em;
@@ -634,13 +638,19 @@ Hero
 
 .hero-body {
   position: absolute;
-  top: 15%;
-  left: 5%;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 10;
+
+  @include mq('sp') {
+    top: 15%;
+    left: 5%;
+    transform: none;
+  }
 
   @include mq('tab') {
     left: 10%;
-
   }
 
   @include mq('xl') {
@@ -661,6 +671,10 @@ Hero
   font-family: $font-family-en;
   color: #fff;
   font-size: 3em;
+
+  // @include mq('sp') {
+  //   font-size: 2em;
+  // }
 
   @include mq('tab') {
     font-size: 3em;
@@ -780,7 +794,11 @@ Hero
 
 .hero-news {
   position: relative;
-  margin-top: 132px;
+  margin-top: 60px;
+
+  @include mq('sp') {
+    margin-top: 132px;
+  }
 
   @include mq('tab') {
     background-color: $background-color;
@@ -894,12 +912,12 @@ Hero
   border: 1px solid $background-color;
   padding: 8px;
   align-items: center;
-  width: 335px;
+  width: 100%;
+
 
   @include mq('tab') {
     background-color: transparent;
     border: none;
-    width: 100%;
     padding: 0;
   }
 }
